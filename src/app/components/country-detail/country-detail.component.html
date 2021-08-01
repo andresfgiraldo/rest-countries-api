@@ -1,0 +1,56 @@
+<ng-container *ngIf="country">
+
+
+    <div class="container me-1 ms-1 mb-5">
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-light btn-sm" (click)="goToBack()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z">
+                        </path>
+                    </svg>
+                    Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row me-1 ms-1">
+        <div class="col-sm-12 col-md-6">
+            <img [src]="country.flag" class="img-fluid" alt="flag">
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <p class="title-country"> {{country.name}}</p>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <p class="info-country"><strong>Native Name: </strong>{{country.nativeName}}</p>
+                    <p class="info-country"><strong>Population: </strong>{{country.population | number}}</p>
+                    <p class="info-country"><strong>Region: </strong> {{country.region}}</p>
+                    <p class="info-country"><strong>Sub Region: </strong>{{country.subregion}}</p>
+                    <p class="info-country"><strong>Capital: </strong>{{country.capital}}</p>
+                </div>
+
+                <div class="col-md-6">
+                    <p class="info-country"><strong>Top Level Domain: </strong>{{country.topLevelDomain}}</p>
+                    <p class="info-country"><strong>Currencies: </strong>{{getCurrencies()}}</p>
+                    <p class="info-country"><strong>Languages: </strong>{{getLanguages()}}</p>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <span class="me-3"><strong>Border Countries:</strong></span>
+                    <button type="button" class="btn btn-sm btn-light me-3 mt-1" (click)="goToBorder(border.alpha3Code)" *ngFor="let border of countriesBorder">{{border.name}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ng-container>

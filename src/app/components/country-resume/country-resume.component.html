@@ -1,0 +1,11 @@
+<div class="card" (click)="detail()">
+    <div class="card-title">
+        <img [src]="country.flag" class="img-fluid" alt="flag">
+    </div>
+    <div class="card-body">
+        <p class="title-country"> {{country.name}}</p>
+        <p class="info-country"><strong>Population: </strong>{{country.population | number}}</p>
+        <p class="info-country"><strong>Region: </strong>{{country.region}}</p>
+        <p class="info-country"><strong>Capital: </strong>{{country.capital}}</p>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">
+                    <i class="fa fa-search"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Search for a country..." (input)="onSearchChange($event.target.value)">
+            </div>
+        </div>
+        <div class="col-md-4 offset-md-4">
+            <div class="input-group">
+                <select class="form-control" (change)="onRegionChange($event.target.value)">
+                    <option value="All">Filter by Region</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Americas">Americas</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<div class="row mt-5">
+    <app-grid [countries]="countries"></app-grid>
+</div>

@@ -1,0 +1,12 @@
+.title-country {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.info-country {
+    margin: auto
+}
+
+img {
+    border: 1px solid rgb(0, 0, 0);
+}
